@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -17,16 +18,22 @@ import javafx.scene.control.Label;
  */
 public class FXMLDocumentController implements Initializable {
     
+      @FXML
+    private TextField VCarro1;
+
+    @FXML
+    private TextField VCarro2;
+    
    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }
     
     @FXML
     void event_guardarV(ActionEvent event) {
-
+        
     }
 
     @FXML

@@ -11,6 +11,8 @@ package Modelo;
 public class Hilo_vehiculo {
     
     int nombreCarro;
+    int posicionInicial;
+    int velocidad;
     
     
 }

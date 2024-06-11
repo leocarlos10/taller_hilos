@@ -30,7 +30,7 @@
             <Image url="@../Imagenes/carretera.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="101.0" fitWidth="187.0" layoutX="1.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="101.0" fitWidth="187.0" layoutX="30.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagenes/carro1.jpg" />
          </image>
@@ -44,8 +44,8 @@
          <children>
             <Label layoutX="27.0" layoutY="36.0" text="Velocidad carro 1" />
             <Label layoutX="27.0" layoutY="80.0" prefHeight="17.0" prefWidth="101.0" text="Velocidad carro 2" />
-            <TextField layoutX="138.0" layoutY="32.0" />
-            <TextField layoutX="138.0" layoutY="76.0" />
+            <TextField fx:id="VCarro1" layoutX="138.0" layoutY="32.0" />
+            <TextField fx:id="VCarro2" layoutX="138.0" layoutY="76.0" />
             <Button layoutX="183.0" layoutY="111.0" mnemonicParsing="false" onAction="#event_guardarV" text="Guardar" />
          </children>
       </Pane>
@@ -55,7 +55,7 @@
             <Label layoutX="14.0" layoutY="26.0" prefHeight="17.0" prefWidth="101.0" text="Velocidad carro 1" />
             <Button layoutX="223.0" layoutY="55.0" mnemonicParsing="false" onAction="#event_guardarVCarro1" text="Guardar Velocidad carro 1" />
             <Button layoutX="223.0" layoutY="93.0" mnemonicParsing="false" onAction="#event_guardarVcarro2" text="Ingresar velocidad carro 2" />
-            <Button layoutY="121.0" mnemonicParsing="false" text="Reiniciar" />
+            <Button layoutY="121.0" mnemonicParsing="false" onAction="#event_reiniciar" text="Reiniciar" />
          </children>
       </Pane>
    </children>
