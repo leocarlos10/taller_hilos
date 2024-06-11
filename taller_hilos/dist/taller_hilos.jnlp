@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="taller_hilos.jnlp">
+  <information>
+    <title>taller_hilos</title>
+    <vendor>USUARIO</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="taller_hilos.jar" size="149370" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="taller_hilos.Taller_hilos"  name="taller_hilos" />
+  <update check="always"/>
+</jnlp>

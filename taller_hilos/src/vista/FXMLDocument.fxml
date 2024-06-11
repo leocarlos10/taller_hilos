@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="764.0" prefWidth="1219.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="controlador.FXMLDocumentController">
+   <children>
+      <ImageView fitHeight="764.0" fitWidth="1219.0" layoutX="-2.0" layoutY="1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagenes/paisaje%20de%20fondo.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="410.0" fitWidth="364.0" layoutY="355.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagenes/ciudad%20A.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="410.0" fitWidth="364.0" layoutX="853.0" layoutY="354.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagenes/Ciudad%20B.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="400.0" fitWidth="490.0" layoutX="364.0" layoutY="354.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagenes/carretera.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="101.0" fitWidth="187.0" layoutX="1.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/carro1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="101.0" fitWidth="187.0" layoutX="1036.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/carro2.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
