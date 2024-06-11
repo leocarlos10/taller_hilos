@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import Modelo.Hilo_vehiculo;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -11,12 +12,22 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 /**
  *
  * @author USUARIO
  */
 public class FXMLDocumentController implements Initializable {
+    
+    double posicionInicialCarro1=0;
+    double posicionInicialCarro2=0;
+    
+       @FXML
+    private ImageView carro1;
+
+    @FXML
+    private ImageView carro2;
     
       @FXML
     private TextField VCarro1;
@@ -28,12 +39,17 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        posicionInicialCarro1 = carro1.getX();
+        posicionInicialCarro2 = carro2.getX();
     }
     
     @FXML
     void event_guardarV(ActionEvent event) {
         
+        Hilo_vehiculo hilo1 = new Hilo_vehiculo("carro1",carro1.getX(),Integer.parseInt(VCarro1.getText()), carro1);
+        Hilo_vehiculo hilo2 = new Hilo_vehiculo("carro2",carro2.getX(),Integer.parseInt(VCarro2.getText()), carro2);
+        hilo1.start();
+        hilo2.start();
     }
 
     @FXML

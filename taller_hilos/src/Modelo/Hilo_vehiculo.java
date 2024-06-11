@@ -4,15 +4,32 @@
  */
 package Modelo;
 
+import javafx.scene.image.ImageView;
+
 /**
  *
  * @author USUARIO
  */
-public class Hilo_vehiculo {
+public class Hilo_vehiculo extends Thread {
     
-    int nombreCarro;
-    int posicionInicial;
+    String nombreCarro;
+    double posicionInicial;
     int velocidad;
+    ImageView imagen;
+    
+    public Hilo_vehiculo(String nombre, double posicionInicial,int velocidad,ImageView imagen){
+        this.nombreCarro = nombre;
+        this.velocidad = velocidad;
+        this.posicionInicial = posicionInicial;
+        this.imagen = imagen;
+    }
+    
+    
+    @Override
+    public void run(){
+        
+        //logica
+    }
     
     
 }
