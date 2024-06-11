@@ -16,12 +16,14 @@ public class Hilo_vehiculo extends Thread {
     double posicionInicial;
     int velocidad;
     ImageView imagen;
+    Long tiempoInicial;
     
-    public Hilo_vehiculo(String nombre, double posicionInicial,int velocidad,ImageView imagen){
+    public Hilo_vehiculo(String nombre, double posicionInicial,int velocidad,ImageView imagen, Long tiempoInicial){
         this.nombreCarro = nombre;
         this.velocidad = velocidad;
         this.posicionInicial = posicionInicial;
         this.imagen = imagen;
+        this.tiempoInicial= tiempoInicial;
     }
     
     

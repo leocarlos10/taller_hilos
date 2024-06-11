@@ -20,8 +20,9 @@ import javafx.scene.image.ImageView;
  */
 public class FXMLDocumentController implements Initializable {
     
-    double posicionInicialCarro1=0;
-    double posicionInicialCarro2=0;
+    double posicionInicialCarro1;
+    double posicionInicialCarro2;
+    Long tiempoIncial;
     
        @FXML
     private ImageView carro1;
@@ -41,13 +42,16 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         posicionInicialCarro1 = carro1.getX();
         posicionInicialCarro2 = carro2.getX();
+        
+        tiempoIncial = System.currentTimeMillis();
+        
     }
     
     @FXML
     void event_guardarV(ActionEvent event) {
         
-        Hilo_vehiculo hilo1 = new Hilo_vehiculo("carro1",carro1.getX(),Integer.parseInt(VCarro1.getText()), carro1);
-        Hilo_vehiculo hilo2 = new Hilo_vehiculo("carro2",carro2.getX(),Integer.parseInt(VCarro2.getText()), carro2);
+        Hilo_vehiculo hilo1 = new Hilo_vehiculo("carro1",carro1.getX(),Integer.parseInt(VCarro1.getText()), carro1,tiempoIncial);
+        Hilo_vehiculo hilo2 = new Hilo_vehiculo("carro2",carro2.getX(),Integer.parseInt(VCarro2.getText()), carro2,tiempoIncial);
         hilo1.start();
         hilo2.start();
     }
