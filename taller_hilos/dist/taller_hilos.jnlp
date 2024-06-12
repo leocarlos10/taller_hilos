@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="taller_hilos.jar" size="151883" download="eager" />
+    <jar href="taller_hilos.jar" size="152562" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="App.Taller_hilos"  name="taller_hilos" />
   <update check="always"/>

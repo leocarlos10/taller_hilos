@@ -51,7 +51,7 @@
       </Pane>
       <Pane layoutX="345.0" layoutY="1.0" prefHeight="160.0" prefWidth="401.0" style="-fx-background-color: white;">
          <children>
-            <TextField layoutX="126.0" layoutY="22.0" />
+            <TextField fx:id="vista2Vcarro1" layoutX="126.0" layoutY="22.0" />
             <Label layoutX="14.0" layoutY="26.0" prefHeight="17.0" prefWidth="101.0" text="Velocidad carro 1" />
             <Button layoutX="223.0" layoutY="55.0" mnemonicParsing="false" onAction="#event_guardarVCarro1" text="Guardar Velocidad carro 1" />
             <Button layoutX="223.0" layoutY="93.0" mnemonicParsing="false" onAction="#event_guardarVcarro2" text="Ingresar velocidad carro 2" />
