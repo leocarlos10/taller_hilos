@@ -53,16 +53,16 @@ public class Hilo_vehiculo extends Thread {
             double desplazamiento = velocidad * tiempoSegundos;
 
             // si el hilo que ejecuta el metodo es carro1 se suma de lo contrario se resta
-            double newX;
+            double nuevaX;
             if (nombreCarro.equals("carro1")) {
-                newX = posicionInicial + desplazamiento;
+                nuevaX = posicionInicial + desplazamiento;
             } else {
-                newX = posicionInicial - desplazamiento;
+                nuevaX = posicionInicial - desplazamiento;
             }
 
             // Actualizar la posición del carro
             Platform.runLater(() -> {
-                imagen.setLayoutX(newX); // Actualizar la posición en X
+                imagen.setLayoutX(nuevaX); // Actualizar la posición en X
 
                 // Comprobar colisión
                 if (carro1.getBoundsInParent().intersects(carro2.getBoundsInParent())) {

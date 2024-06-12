@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.ImageView;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -55,25 +56,28 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void event_guardarV(ActionEvent event) {
-
+        
+        // para el contexto 1 se puede obtener un tiempo inicial para los dos carros
+        // pero para el contexto 2 se debe obtener un tiempo incial independiente.
         tiempoIncial = System.currentTimeMillis();
-        detenerHilos();
+        // instanciamos los hilos
         hilo1 = new Hilo_vehiculo("carro1", carro1.getLayoutX(), Integer.parseInt(VCarro1.getText()), carro1, tiempoIncial, carro1, carro2);
         hilo2 = new Hilo_vehiculo("carro2", carro2.getLayoutX(), Integer.parseInt(VCarro2.getText()), carro2, tiempoIncial, carro1, carro2);
+        // ejecutamos los hilos 
         hilo1.start();
         hilo2.start();
+        // limpiamos los textfield
         VCarro1.setText("");
         VCarro2.setText("");
     }
 
     @FXML
     void event_guardarVCarro1(ActionEvent event) {
-
-        tiempoIncial = System.currentTimeMillis();
-        // en caso de halla algun hilo en ejecucion
-        detenerHilos();
+        
+        //calculamos el tiempo inicial localmente
+        long tiempoIncialcarro1 = System.currentTimeMillis();
         // instanciamos el hilo1
-        hilo1 = new Hilo_vehiculo("carro1", carro1.getLayoutX(), Integer.parseInt(vista2Vcarro1.getText()), carro1, tiempoIncial, carro1, carro2);
+        hilo1 = new Hilo_vehiculo("carro1", carro1.getLayoutX(), Integer.parseInt(vista2Vcarro1.getText()), carro1, tiempoIncialcarro1, carro1, carro2);
         hilo1.start();
         vista2Vcarro1.setText("");
     }
@@ -81,34 +85,26 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void event_guardarVcarro2(ActionEvent event) {
 
-        //calculamos el tiempo inicial
-        tiempoIncial = System.currentTimeMillis();
-        // verificamos que no haya ningun hilo ejecutandose
-        detenerHilos();
+        //calculamos el tiempo inicial localmente
+        long tiempoIncialcarro2 = System.currentTimeMillis();
         // le pedimos la velocidad al usuario
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Velocidad vehiculo 2");
-        dialog.setHeaderText("vehiculo 2");
-        dialog.setContentText("Ingrese la velocidad : ");
-
-        // Mostrar el diálogo y esperar la entrada del usuario
-        Optional<String> result = dialog.showAndWait();
-
-        // Procesar la entrada del usuario
-        result.ifPresent(velocidad -> {
-            hilo2 = new Hilo_vehiculo("carro2", carro2.getLayoutX(), Integer.parseInt(velocidad), carro2, tiempoIncial, carro1, carro2);
-            hilo2.start();
-        });
+        int Vcarro2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la velocidad del carro2"));
+        // instanciamos el hilo2
+        hilo2 = new Hilo_vehiculo("carro2", carro2.getLayoutX(), Vcarro2, carro2, tiempoIncialcarro2, carro1, carro2);
+        hilo2.start();
     }
 
     @FXML
     void event_reiniciar(ActionEvent event) {
+        // detenemos los hilos 
         detenerHilos();
+        // devolvemos las imagenes a su posicion inicial
         carro1.setLayoutX(posicionInicialCarro1);
         carro2.setLayoutX(posicionInicialCarro2);
     }
 
     private void detenerHilos() {
+       
         if (hilo1 != null) {
             hilo1.detener();
             hilo1 = null;
