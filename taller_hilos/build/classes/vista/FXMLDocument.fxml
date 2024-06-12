@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="764.0" prefWidth="1219.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="controlador.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="764.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLDocumentController">
    <children>
       <ImageView fitHeight="764.0" fitWidth="1219.0" layoutX="-2.0" layoutY="1.0" pickOnBounds="true">
          <image>
@@ -26,15 +30,33 @@
             <Image url="@../Imagenes/carretera.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="101.0" fitWidth="187.0" layoutX="1.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="carro1" fitHeight="101.0" fitWidth="187.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagenes/carro1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="101.0" fitWidth="187.0" layoutX="1036.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="carro2" fitHeight="101.0" fitWidth="187.0" layoutX="1035.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagenes/carro2.jpeg" />
          </image>
       </ImageView>
+      <Pane layoutX="1.0" layoutY="1.0" prefHeight="160.0" prefWidth="344.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="27.0" layoutY="36.0" text="Velocidad carro 1" />
+            <Label layoutX="27.0" layoutY="80.0" prefHeight="17.0" prefWidth="101.0" text="Velocidad carro 2" />
+            <TextField fx:id="VCarro1" layoutX="138.0" layoutY="32.0" />
+            <TextField fx:id="VCarro2" layoutX="138.0" layoutY="76.0" />
+            <Button layoutX="183.0" layoutY="111.0" mnemonicParsing="false" onAction="#event_guardarV" text="Guardar" />
+         </children>
+      </Pane>
+      <Pane layoutX="345.0" layoutY="1.0" prefHeight="160.0" prefWidth="401.0" style="-fx-background-color: white;">
+         <children>
+            <TextField layoutX="126.0" layoutY="22.0" />
+            <Label layoutX="14.0" layoutY="26.0" prefHeight="17.0" prefWidth="101.0" text="Velocidad carro 1" />
+            <Button layoutX="223.0" layoutY="55.0" mnemonicParsing="false" onAction="#event_guardarVCarro1" text="Guardar Velocidad carro 1" />
+            <Button layoutX="223.0" layoutY="93.0" mnemonicParsing="false" onAction="#event_guardarVcarro2" text="Ingresar velocidad carro 2" />
+            <Button layoutY="121.0" mnemonicParsing="false" onAction="#event_reiniciar" text="Reiniciar" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
